@@ -1,5 +1,5 @@
 import assert from 'node:assert'
-import { contabilizarQuantidadeDeCafe, contabilizarQuantidadeDeItem } from '../src/starbucks.js'
+import { contabilizarQuantidadeDeItem } from '../src/starbucks.js'
 
 describe('Testes para gestão de cafeteria', () => {
 
@@ -10,10 +10,11 @@ describe('Testes para gestão de cafeteria', () => {
             { nome: "bolo de cenoura", valor: 12.00 },
             { nome: "café com leite", valor: 5.00 },
         ]
+        const itemPesquisado = "café"
         const retornoEsperado = 1
 
         // Act
-        const quantidadeDeCafes = contabilizarQuantidadeDeCafe(listaPedidos)
+        const quantidadeDeCafes = contabilizarQuantidadeDeItem(itemPesquisado, listaPedidos)
 
         // Assert
         assert.equal(quantidadeDeCafes, retornoEsperado)
@@ -26,10 +27,11 @@ describe('Testes para gestão de cafeteria', () => {
             { nome: "bolo de cenoura", valor: 12.00 },
             { nome: "café com leite", valor: 5.00 },
         ]
+        const itemPesquisado = "café"
         const retornoEsperado = 0
 
         // Act
-        const quantidadeDeCafes = contabilizarQuantidadeDeCafe(listaPedidos)
+        const quantidadeDeCafes = contabilizarQuantidadeDeItem(itemPesquisado, listaPedidos)
 
         // Assert
         assert.equal(quantidadeDeCafes, retornoEsperado)
@@ -45,10 +47,11 @@ describe('Testes para gestão de cafeteria', () => {
             { nome: "café", valor: 4.00 },
             { nome: "café com leite", valor: 5.00 },
         ]
+        const itemPesquisado = "café"
         const retornoEsperado = 2
 
         // Act
-        const quantidadeDeCafes = contabilizarQuantidadeDeCafe(listaPedidos)
+        const quantidadeDeCafes = contabilizarQuantidadeDeItem(itemPesquisado, listaPedidos)
 
         // Assert
         assert.equal(quantidadeDeCafes, retornoEsperado)
@@ -58,10 +61,11 @@ describe('Testes para gestão de cafeteria', () => {
     it('TC 4 - Retornar uma lista de pedidos vazia', () => {
         // Arrange
         const listaPedidos = []
+        const itemPesquisado = "café"
         const retornoEsperado = 0
 
         // Act
-        const quantidadeDeCafes = contabilizarQuantidadeDeCafe(listaPedidos)
+        const quantidadeDeCafes = contabilizarQuantidadeDeItem(itemPesquisado, listaPedidos)
 
         // Assert
         assert.equal(quantidadeDeCafes, retornoEsperado)
