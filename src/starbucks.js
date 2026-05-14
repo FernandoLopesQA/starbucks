@@ -4,7 +4,6 @@ export function contabilizarQuantidadeDeCafe(listaPedidos) {
 
     for (let i = 0; i < listaPedidos.length; i++) {
 
-
         if (listaPedidos[i].nome == "café") {
             quantidadeCafe++
         }

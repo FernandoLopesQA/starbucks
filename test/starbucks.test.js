@@ -36,7 +36,7 @@ describe('Testes para gestão de cafeteria', () => {
 
     });
 
-    it('TC 3 - Ter 2 ou mais cafés na lista', () => {
+    it('TC 3 - Ter 2 cafés na lista', () => {
         // Arrange
         const listaPedidos = [
             { nome: "café", valor: 4.00 },
