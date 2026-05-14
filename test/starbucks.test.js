@@ -55,4 +55,17 @@ describe('Testes para gestão de cafeteria', () => {
 
     });
 
+        it('TC 4 - Retornar uma lista de pedidos vazia', () => {
+        // Arrange
+        const listaPedidos = []
+        const retornoEsperado = 0
+
+        // Act
+        const quantidadeDeCafes = contabilizarQuantidadeDeCafe(listaPedidos)
+
+        // Assert
+        assert.equal(quantidadeDeCafes, retornoEsperado)
+
+    });
+
 });
