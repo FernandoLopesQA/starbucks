@@ -1,14 +1,14 @@
-export function contabilizarQuantidadeDeCafe(listaPedidos) {
+export function contabilizarQuantidadeDeItem(itemEsperado, listaPedidos){
 
-    let quantidadeCafe = 0
+    let quantidadeItemEsperado = 0
 
     for (let i = 0; i < listaPedidos.length; i++) {
 
-        if (listaPedidos[i].nome == "café") {
-            quantidadeCafe++
+        if (listaPedidos[i].nome == itemEsperado) {
+            quantidadeItemEsperado++
         }
     }
 
-    return quantidadeCafe
+    return quantidadeItemEsperado
 
 }
