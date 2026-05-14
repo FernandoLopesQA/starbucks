@@ -36,7 +36,7 @@ describe('Testes para gestão de cafeteria', () => {
 
     });
 
-    it('TC 3 - Ter 2 ou mais cafés na lista', () => {
+    it('TC 3 - Ter 2 cafés na lista', () => {
         // Arrange
         const listaPedidos = [
             { nome: "café", valor: 4.00 },
@@ -46,6 +46,19 @@ describe('Testes para gestão de cafeteria', () => {
             { nome: "café com leite", valor: 5.00 },
         ]
         const retornoEsperado = 2
+
+        // Act
+        const quantidadeDeCafes = contabilizarQuantidadeDeCafe(listaPedidos)
+
+        // Assert
+        assert.equal(quantidadeDeCafes, retornoEsperado)
+
+    });
+
+        it('TC 4 - Retornar uma lista de pedidos vazia', () => {
+        // Arrange
+        const listaPedidos = []
+        const retornoEsperado = 0
 
         // Act
         const quantidadeDeCafes = contabilizarQuantidadeDeCafe(listaPedidos)
